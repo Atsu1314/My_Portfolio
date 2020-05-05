@@ -1,22 +1,26 @@
 <template id="">
-  <div class="jumbotron junbotron-extend" :class="{welcome : get_in}">
+  <div class="jumbotron junbotron-extend">
+
     <div class="container-fluid text-center">
-      Wlcome to <p class="name">Muta Atsuyoshi's</p> Portfolio!
+      Welcome to <p class="name">Muta Atsuyoshi's</p> Portfolio!
     </div>
-    <div class="btn" @click='welcome' :class="{clicked : get_in}"><p>Get in</p></div>
+
+    <div class="btn" @click="welcome()" :class="{clicked : getInOfTop}"><p>Get in</p></div>
+
   </div>
 </template>
 
 <script type="text/javascript">
   export default {
-    data() {
-      return {
-      get_in : false,
+    data(){
+      return{
+        getInOfTop: false
       }
     },
     methods: {
       welcome() {
-        this.get_in = !this.get_in
+        this.getInOfTop = true,
+        this.$emit('getIn')
       }
     }
   }
@@ -27,9 +31,10 @@
 .junbotron-extend{
   position:relative;
   height: 100vh;
-  background: url("../../assets/IMG_0167.jpg") no-repeat center center;
+  background: url("../assets/IMG_0167.jpg") no-repeat center center;
   background-color: #aaa;
   background-size: cover;
+  margin-bottom: 0;
 }
 
 div{
@@ -69,11 +74,6 @@ div{
 
 .clicked{
   color: white!important;
-  transition: all 600ms 0s ease;
-}
-
-.welcome{
-  background: white;
   transition: all 600ms 0s ease;
 }
 </style>

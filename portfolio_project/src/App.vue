@@ -1,23 +1,32 @@
 <template>
   <div id="app">
-    <Header></Header>
-    <Top></Top>
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+    <Top :class="{welcome: get_in}" v-on:getIn="getIn()"></Top>
+    <Main v-show="get_in" :class="{show: get_in}"></Main>
+    <Footer/>
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
-import Header from './components/parts/Header.vue'
-import Top from './components/parts/Top.vue'
-
+import Footer from './components/parts/Footer.vue'
+import Top from './views/Top.vue'
+import Main from './views/Main.vue'
 
 export default {
   name: 'App',
   components: {
-    // HelloWorld,
-    Header,
     Top,
+    Main,
+    Footer,
+  },
+  data(){
+    return{
+      get_in: false,
+    }
+  },
+  methods: {
+    getIn() {
+      this.get_in = true
+    }
   }
 }
 </script>
@@ -30,5 +39,14 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 20px;
+}
+
+.welcome{
+  background: white!important;
+  transition: all 600ms 0s ease;
+}
+
+.show{
+  transition: all 600ms 0s ease;
 }
 </style>
