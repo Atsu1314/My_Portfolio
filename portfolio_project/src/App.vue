@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Top :class="{welcome: get_in}" v-on:getIn="getIn()"></Top>
-    <Main v-show="get_in" :class="{show: get_in}"></Main>
+    <Top v-show="!delete_top" :class="{welcome: get_in}" v-on:getIn="getIn()"></Top>
+    <Main v-show="delete_top" :class="{show: get_in}" :showMain="get_in"></Main>
     <Footer/>
   </div>
 </template>
@@ -21,12 +21,14 @@ export default {
   data(){
     return{
       get_in: false,
+      delete_top: false,
     }
   },
   methods: {
     getIn() {
       this.get_in = true
-    }
+      setTimeout(() => this.delete_top = true,600)
+    },
   }
 }
 </script>
@@ -38,15 +40,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 20px;
 }
 
 .welcome{
   background: white!important;
-  transition: all 600ms 0s ease;
-}
-
-.show{
   transition: all 600ms 0s ease;
 }
 </style>

@@ -42,7 +42,6 @@ div{
   font-family: 'Sawarabi Mincho', sans-serif;
   font-size: 90px;
   user-select: none;
-  /* text-shadow: 4px 4px 4px #aaa; */
   spacing: 0.1em;
   line-height: 1.2em;
 }
