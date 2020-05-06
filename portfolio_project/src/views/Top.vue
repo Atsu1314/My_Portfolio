@@ -1,10 +1,17 @@
 <template id="">
   <div class="jumbotron junbotron-extend">
-
     <div class="container-fluid text-center">
-      Welcome to <p class="name">Muta Atsuyoshi's</p> Portfolio!
+      <div class="d-none d-md-block">
+        <p :class="{text_opacity : getInOfTop}">Welcome to</p>
+        <p :class="{text_opacity : getInOfTop}">Muta Atsuyoshi's</p>
+        <p :class="{text_opacity : getInOfTop}">Portfolio.</p>
+      </div>
+      <div class="d-md-none smart">
+        <p :class="{text_opacity : getInOfTop}">Welcome to</p>
+        <p :class="{text_opacity : getInOfTop}">Muta Atsuyoshi's</p>
+        <p :class="{text_opacity : getInOfTop}">Portfolio.</p>
+      </div>
     </div>
-
     <div class="btn" @click="welcome()" :class="{clicked : getInOfTop}"><p>Get in</p></div>
 
   </div>
@@ -31,10 +38,12 @@
 .junbotron-extend{
   position:relative;
   height: 100vh;
-  background: url("../assets/IMG_0167.jpg") no-repeat center center;
+  min-height: 600px;
+  background: url("../assets/IMG_0174.jpg") no-repeat center center;
   background-color: #aaa;
   background-size: cover;
   margin-bottom: 0;
+  border-radius: 5px 5px 0 0;
 }
 
 div{
@@ -46,8 +55,14 @@ div{
   line-height: 1.2em;
 }
 
-.name{
-  color:white;
+.text_opacity{
+  color: #ffc978;
+  opacity: 0;
+  transition: all 400ms 0ms ease;
+}
+
+.smart{
+  font-size: 45px;
 }
 
 .container-fluid{
@@ -61,7 +76,7 @@ div{
   border-radius: 10px;
   border-color: white;
   text-shadow: none;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .btn:hover{
@@ -72,7 +87,8 @@ div{
 }
 
 .clicked{
-  color: white!important;
-  transition: all 600ms 0s ease;
+  color: #ffc978!important;
+  opacity: 0;
+  transition: all 400ms 0s ease;
 }
 </style>

@@ -43,7 +43,8 @@ export default {
 }
 
 .welcome{
-  background: white!important;
-  transition: all 600ms 0s ease;
+  background-color:#ffc978;
+  opacity: 0.5;
+  transition: all 500ms 0ms ease;
 }
 </style>
