@@ -1,10 +1,16 @@
 <template lang="html">
   <div class="origin container-fuluid" :class="{show : show_main()}" >
     <div v-show="move1" class="btn row w-75" :class="{btn_after : move2}">
-      kaigyou <br> kaigyou <br>kaigyou <br>kaigyou <br>kaigyou <br> kaigyou <br>kaigyou <br>kaigyou <br>kaigyou <br>kaigyou <br>
-      kaigyou <br> kaigyou <br>kaigyou <br>kaigyou <br>kaigyou <br> kaigyou <br>kaigyou <br>kaigyou <br>kaigyou <br>kaigyou <br>
-      kaigyou <br> kaigyou <br>kaigyou <br>kaigyou <br>kaigyou <br> kaigyou <br>kaigyou <br>kaigyou <br>kaigyou <br>kaigyou <br>
-      kaigyou <br> kaigyou <br>kaigyou <br>kaigyou <br>kaigyou <br> kaigyou <br>kaigyou <br>kaigyou <br>kaigyou <br>kaigyou <br>
+      <div class="row">
+        <b class="h1 history col-12">H I S T O R Y</b>
+        <p class="col">2014/04 千葉大学 理学部生物学科 入学</p>
+        <p class="col-12">2015/04 千葉大学 数学・情報数理学科 転学科</p>
+        <p class="col-12">2018/04 東京工業大学 情報理工学院 数理・計算科学系 数理計算科学コース 入学</p>
+        <p class="col-12">2020/02 イグニションポイント株式会社 インターンとしてフロントエンド開発を経験</p>
+      </div>
+      <div class="row">
+        <b class="h1 col-12 works">W O R K s</b>
+      </div>
     </div>
   </div>
 </template>
@@ -69,5 +75,13 @@ div{
   background-color: #eee;
   opacity: 0.9;
   transition: all 1200ms 0ms ease;
+}
+
+.history{
+  padding-bottom: 30px;
+}
+
+.works{
+  padding-top: 30px;
 }
 </style>
